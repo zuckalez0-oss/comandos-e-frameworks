@@ -1,0 +1,52 @@
+/* streamlit_assets/style.css (VERSÃO RENDERIZAÇÃO DE INTERFACE) */
+
+/* --- VARIÁVEIS E BASE --- */
+:root { --background:#0a0a0a; --text:#E0E0E0; --text-highlight:#00ff41; --link-color:#00A9A9; --link-hover:#33FFDD; --border-color:#333; --code-bg:#1E1E1E; }
+body { font-family: 'Fira Code', monospace !important; }
+[data-testid="stAppViewContainer"], [data-testid="stHeader"] { background-color: var(--background); }
+[data-testid="stSidebar"] { background-color: rgba(15, 15, 15, 0.9); border-right: 1px solid var(--border-color); }
+.st-emotion-cache-1kyxreq, [data-testid="stMarkdownContainer"], .st-emotion-cache-16idsys p { color: var(--text) !important; }
+h1, h2, h3, h4, h5, h6, .st-emotion-cache-10trblm { color: var(--text-highlight); font-family: 'Fira Code', monospace; }
+[data-testid="stIcon"] { filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg); transform: scale(1.5); display: inline-block; margin-right: 10px; }
+a { color: var(--link-color); }
+a:hover { color: var(--link-hover); }
+
+/* --- BLOCO DE CÓDIGO (COMANDOS) --- */
+/* Estiliza os blocos ```comando``` do markdown */
+pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--text-highlight);
+    padding: 1em;
+    color: var(--text);
+    white-space: pre-wrap; /* Garante que comandos longos quebrem a linha */
+    word-break: break-all;
+}
+code {
+    font-family: 'Fira Code', monospace;
+}
+
+/* --- ESTILO DOS REGISTROS DE LINKS --- */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: rgba(12, 12, 12, 0.8);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 0; /* Bordas retas para um visual mais "terminal" */
+    transition: all 0.2s ease-out;
+}
+[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    border-color: var(--link-hover);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+}
+[data-testid="stVerticalBlockBorderWrapper"] a {
+    word-break: break-all;
+}
+[data-testid="stVerticalBlockBorderWrapper"] subheader {
+    margin-bottom: 10px;
+}
+
+/* --- OUTROS ESTILOS (Sidebar, Chat, etc.) --- */
+[data-testid="stSidebar"] .stButton>button { background-color: #0c3b1e; border-color: var(--text-highlight); color: var(--text-highlight); transition: all 0.2s ease; }
+[data-testid="stSidebar"] .stButton>button:hover { box-shadow: 0 0 15px var(--shadow-color); transform: scale(1.05); background-color: var(--text-highlight); color: var(--background); }
+[data-testid="stChatInput"] { background-color: var(--background); }
+[data-testid="stChatMessage"] { background-color: #1a1a1a; border-radius: 10px; padding: 1rem; }
